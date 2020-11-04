@@ -1,5 +1,5 @@
 from sagemaker_inference import model_server
-from . import handler_service
+import handler_service
 
 
 HANDLER_SERVICE = handler_service.__file__
