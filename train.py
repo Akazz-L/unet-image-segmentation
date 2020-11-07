@@ -1,7 +1,6 @@
 from model import *
 from data import *
 import os
-import datetime
 from keras.callbacks import ModelCheckpoint
 
 input_dir = "/opt/ml/input/data/train/image/"
@@ -22,7 +21,7 @@ if __name__ == '__main__':
     model = unet_model()
 
     callbacks = []
-    weights_path = output_dir +'unet_membrane' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + '.hdf5'
+    weights_path = output_dir +'unet_membrane' + '.hdf5'
     checkpoint = ModelCheckpoint(weights_path, monitor='loss', verbose=1, save_best_only=True)
     callbacks.append(checkpoint)
     model.fit(train_datagen, steps_per_epoch=30, epochs=10, verbose=1, callbacks = callbacks)

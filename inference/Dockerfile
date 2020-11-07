@@ -1,9 +1,13 @@
 FROM ubuntu:18.04
 
 # Set a docker label to advertise multi-model support on the container
-#LABEL com.amazonaws.sagemaker.capabilities.multi-models=true
+# LABEL com.amazonaws.sagemaker.capabilities.multi-models=true
 # Set a docker label to enable container to use SAGEMAKER_BIND_TO_PORT environment variable if present
 LABEL com.amazonaws.sagemaker.capabilities.accept-bind-to-port=true
+
+# Add path to import access handler_service from the entrypoint
+ENV PYTHONPATH "${PYTHONPATH}:/home/model-server/"
+
 
 # Install necessary dependencies for MMS and SageMaker Inference Toolkit
 RUN apt-get update && \
