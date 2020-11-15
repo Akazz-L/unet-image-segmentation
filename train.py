@@ -8,7 +8,6 @@ target_dir = "/opt/ml/input/data/train/label/"
 output_dir = "/opt/ml/model/"
 
 if __name__ == '__main__':
-    list_files = os.listdir("/opt/ml/input/")
     input_img_paths, target_img_paths = get_train_data_paths(input_dir, target_dir)
     # Load data
     train_datagen = DataLoader(batch_size = 1, 

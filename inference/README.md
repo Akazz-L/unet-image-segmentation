@@ -50,4 +50,4 @@ Then create the endpoint configuration including :
 - the HW resources 
 
 ### Endpoint
-Finally create the endpoin by selecting the previous endpoint configuration which will automatically start an instance and deploy the container
+Finally create the endpoinr by selecting the previous endpoint configuration which will automatically start an instance and deploy the container
